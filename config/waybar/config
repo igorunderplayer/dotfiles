@@ -1,0 +1,94 @@
+{
+    "layer": "top", // Waybar at top layer
+    "position": "top", // Waybar position (top|bottom|left|right)
+    // "width": 1280, // Waybar width
+    // Choose the order of the modules
+    "modules-left": ["hyprland/workspaces", "custom/music"],
+    "modules-center": ["hyprland/window"],
+    "modules-right": ["wireplumber","bluetooth", "backlight", "battery", "clock", "tray", "custom/lock", "custom/power"],
+    "hyprland/window": {
+      "format": "{title}"
+    },
+    "hyprland/workspaces": {
+         "disable-scroll": true,
+         "sort-by-name": true,
+         "format": " {icon} ",
+         "format-icons": {
+             "default": "",
+         },
+     },
+    "tray": {
+        "icon-size": 21,
+        "spacing": 10
+    },
+    "custom/music": {
+        "format": "   {}",
+        "escape": true,
+        "exec": "~/.config/waybar/scripts/scroll_player_status.sh",
+        "on-click": "playerctl play-pause",
+        "max-length": 40
+    },
+    "clock": {
+        "timezone": "America/Sao_Paulo",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "󰥔 {:%d/%m/%Y}",
+        "format": "󰥔 {:%H:%M}"
+    },
+    "backlight": {
+        "device": "amdgpu_bl1",
+        "format": "{icon}",
+        "format-icons": ["", "", "", "", "", "", "", "", ""]
+    },
+    "battery": {
+    "states": {
+        "warning": 30,
+        "critical": 15
+    },
+    "format": "{icon} {capacity}%",
+    "format-charging": "󰂄 {capacity}%",
+    "format-plugged": "󱟢 {capacity}%",
+    "format-alt": "{icon} {time}",
+    "format-icons": [
+        "󰂃", // 0–9%
+        "󰁺", // 10–19%
+        "󰁻", // 20–29%
+        "󰁼", // 30–39%
+        "󰁽", // 40–49%
+        "󰁾", // 50–59%
+        "󰁿", // 60–69%
+        "󰂀", // 70–79%
+        "󰂁", // 80–89%
+        "󰁹"  // 90–100%
+    ]
+},
+
+
+    "custom/lock": {
+        "tooltip": false,
+        "on-click": "sh -c '(sleep 0.5s; hyprlock)' & disown",
+        "format": ""
+    },
+    "custom/power": {
+        "tooltip": false,
+        "on-click": "wlogout &",
+        "format": "⏻"
+    },
+    "wireplumber": {
+        "format": "{icon} {volume}%",
+        "format-muted": "",
+        "on-click": "pwvucontrol",
+        "format-icons": {
+            "default": ["", "", " "]
+        }
+    },
+    "bluetooth": {
+      "format": " {status}",
+      "format-connected": " {device_alias}",
+      "format-connected-battery": " {device_alias} {device_battery_percentage}%",
+	    "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+	    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+	    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+	    "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
+      "on-click": "foot -e bluetui"
+    }
+}

@@ -1,0 +1,116 @@
+@import "rose-pine.css";
+
+* {
+  font-family: JetBrainsMono Nerd Font;
+  font-size: 14px;
+  min-height: 0;
+}
+
+#waybar {
+  background: transparent;
+  color: @text;
+  margin: 4px 4px 4px 4px;
+}
+
+#workspaces {
+  border-radius: 1rem;
+  margin: 5px;
+  background-color: @base;
+  margin-left: 1rem;
+}
+
+#workspaces button {
+  color: @rose;
+  border-radius: 1rem;
+  padding: 0.4rem;
+}
+
+#workspaces button.active {
+  color: @foam;
+  border-radius: 1rem;
+}
+
+#workspaces button:hover {
+  color: @pine;
+  border-radius: 1rem;
+}
+
+#window,
+#custom-music,
+#tray,
+#backlight,
+#clock,
+#battery,
+#pulseaudio,
+#wireplumber,
+#custom-lock,
+#bluetooth,
+#custom-power {
+  background-color: @base;
+  padding: 0.5rem 1rem;
+  margin: 5px 0;
+}
+
+#bluetooth {
+  color: @pine;
+}
+
+#clock {
+  color: @iris;
+  border-radius: 0px 1rem 1rem 0px;
+  margin-right: 1rem;
+}
+
+#battery {
+  color: @foam;
+}
+
+#battery.charging {
+  color: @foam;
+}
+
+#battery.warning:not(.charging) {
+  color: @love;
+}
+
+#backlight {
+  color: @gold;
+}
+
+#backlight,
+#battery {
+  border-radius: 0;
+}
+
+#window {
+  border-radius: 1rem;
+  color: @text;
+}
+
+#pulseaudio,
+#wireplumber {
+  color: @rose;
+  border-radius: 1rem 0px 0px 1rem;
+  margin-left: 1rem;
+}
+
+#custom-music {
+  color: @love;
+  border-radius: 1rem;
+}
+
+#custom-lock {
+  border-radius: 1rem 0px 0px 1rem;
+  color: @foam;
+}
+
+#custom-power {
+  margin-right: 1rem;
+  border-radius: 0px 1rem 1rem 0px;
+  color: @love;
+}
+
+#tray {
+  margin-right: 1rem;
+  border-radius: 1rem;
+}
