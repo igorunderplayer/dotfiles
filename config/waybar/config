@@ -65,12 +65,12 @@
 
     "custom/lock": {
         "tooltip": false,
-        "on-click": "sh -c '(sleep 0.5s; hyprlock)' & disown",
+        "on-click": "sh -c '(sleep 0.1s; hyprlock)' & disown",
         "format": ""
     },
     "custom/power": {
         "tooltip": false,
-        "on-click": "wlogout &",
+        "on-click": "wleave &",
         "format": "⏻"
     },
     "wireplumber": {
